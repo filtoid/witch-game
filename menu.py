@@ -7,7 +7,8 @@ class Menu(object):
         self.MAX_TIMER = 20
         self.cooldown_timer = self.MAX_TIMER
 
-    def draw(self, screen):
+    def draw(self, screen, score, high_score):
+
         screen.fill([0, 0, 0])
         #If last_answer is False then print the error message
         font = pygame.font.Font(None, 36)
@@ -20,6 +21,19 @@ class Menu(object):
         q_pos = question.get_rect()
         q_pos.top = 65
         screen.blit(question, q_pos)
+
+        question = font.render("Previous Score: {}".format(str(score)), 1, (255, 255, 0))
+        q_pos = question.get_rect()
+        q_pos.left = 50
+        q_pos.top = 125
+        screen.blit(question, q_pos)
+
+        question = font.render("High Score: {}".format(str(high_score)), 1, (255, 255, 0))
+        q_pos = question.get_rect()
+        q_pos.left = 50
+        q_pos.top = 165
+        screen.blit(question, q_pos)
+
         pygame.display.update()
 
 

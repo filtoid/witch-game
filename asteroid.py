@@ -9,10 +9,12 @@ class Asteroid(object):
         self.sprite = pygame.sprite.Sprite()
         self.get_rand_image()
         self.sprite.rect = self.sprite.image.get_rect()
+        self.good_type = None
 
     def get_rand_image(self):
         picker = random.randint(1,7)
         # picker = 5
+        self.good_type = True
         if picker == 1:
             self.sprite.image = pygame.image.load("images/eyeball.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
@@ -28,13 +30,15 @@ class Asteroid(object):
         elif picker == 5:
             self.sprite.image = pygame.image.load("images/colorful-1321413.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (51,37))
+            self.good_type = False
         elif picker == 6:
             self.sprite.image = pygame.image.load("images/dog.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (40,50))
+            self.good_type = False
         elif picker == 7:
             self.sprite.image = pygame.image.load("images/small_flower.png").convert()
+            self.good_type = False
             self.sprite.image = pygame.transform.scale(self.sprite.image, (54,50))
-        #self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
 
     def update(self):
         self.location.y += 5
@@ -48,6 +52,9 @@ class Asteroid(object):
 
     def draw(self, screen):
         screen.blit(self.sprite.image, self.location.get_loc())
+
+    def is_good_type(self):
+        return self.good_type
 
     def check_collision(self, obj):
         # Check if the two objects are touching
