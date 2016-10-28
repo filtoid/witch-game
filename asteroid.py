@@ -38,7 +38,7 @@ class Asteroid(object):
 
     def update(self):
         self.location.y += 5
-        if self.location.y > 500:\
+        if self.location.y > 500:
             self.reset()
 
     def reset(self):
