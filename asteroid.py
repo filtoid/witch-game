@@ -11,7 +11,7 @@ class Asteroid(object):
         self.sprite.rect = self.sprite.image.get_rect()
 
     def get_rand_image(self):
-        # picker = random.randint(1,7)
+        picker = random.randint(1,7)
         # picker = 5
         if picker == 1:
             self.sprite.image = pygame.image.load("images/eyeball.png").convert()
