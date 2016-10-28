@@ -6,7 +6,7 @@ class Player(object):
         self.location = Location(50,440)
         self.size = Location(40, 40)
         self.sprite = pygame.sprite.Sprite()
-        self.sprite.image = pygame.image.load("witch.png").convert()
+        self.sprite.image = pygame.image.load("images/witch.png").convert()
         self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
         self.sprite.rect = self.sprite.image.get_rect()
         self.travelling_left = True

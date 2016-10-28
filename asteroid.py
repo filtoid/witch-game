@@ -9,31 +9,31 @@ class Asteroid(object):
         self.sprite = pygame.sprite.Sprite()
         self.get_rand_image()
         self.sprite.rect = self.sprite.image.get_rect()
-	
+
     def get_rand_image(self):
         # picker = random.randint(1,7)
-	picker = 5
+        # picker = 5
         if picker == 1:
-            self.sprite.image = pygame.image.load("eyeball.png").convert()
+            self.sprite.image = pygame.image.load("images/eyeball.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
         elif picker == 2:
-            self.sprite.image = pygame.image.load("bat.png").convert()
+            self.sprite.image = pygame.image.load("images/bat.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
         elif picker == 3:
-            self.sprite.image = pygame.image.load("small snake.png").convert()
+            self.sprite.image = pygame.image.load("images/small_snake.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (32,64))
         elif picker == 4:
-            self.sprite.image = pygame.image.load("jaws.png").convert()
+            self.sprite.image = pygame.image.load("images/jaws.png").convert()
             self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
         elif picker == 5:
-            self.sprite.image = pygame.image.load("colorful-1321413.png").convert()
-	    self.sprite.image = pygame.transform.scale(self.sprite.image, (51,37))
+            self.sprite.image = pygame.image.load("images/colorful-1321413.png").convert()
+            self.sprite.image = pygame.transform.scale(self.sprite.image, (51,37))
         elif picker == 6:
-            self.sprite.image = pygame.image.load("dog.png").convert()
-	    self.sprite.image = pygame.transform.scale(self.sprite.image, (40,50))
+            self.sprite.image = pygame.image.load("images/dog.png").convert()
+            self.sprite.image = pygame.transform.scale(self.sprite.image, (40,50))
         elif picker == 7:
-            self.sprite.image = pygame.image.load("small flower.png").convert()
-	    self.sprite.image = pygame.transform.scale(self.sprite.image, (54,50))
+            self.sprite.image = pygame.image.load("images/small_flower.png").convert()
+            self.sprite.image = pygame.transform.scale(self.sprite.image, (54,50))
         #self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
 
     def update(self):

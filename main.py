@@ -17,7 +17,7 @@ def update():
 
 def draw(screen):
     # Here we draw each component to the screen
-    screen.fill([255, 255, 255])
+    screen.fill([0, 0, 0])
     player.draw(screen)
     asteroid.draw(screen)
     pygame.display.update()
