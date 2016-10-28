@@ -8,7 +8,7 @@ class Player(object):
         self.sprite = pygame.sprite.Sprite()
         self.sprite.image = pygame.image.load("witch.png").convert()
         self.sprite.image = pygame.transform.scale(self.sprite.image, (50,50))
-	self.sprite.rect = self.sprite.image.get_rect()
+        self.sprite.rect = self.sprite.image.get_rect()
         self.travelling_left = True
 
     def update(self):
